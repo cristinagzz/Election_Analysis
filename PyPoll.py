@@ -36,10 +36,19 @@ candidate_options= []
 #1.Declare the empty dictionary.
 candidate_votes={}
 
+# 1. county list and dictionary with county votes
+county_list = []
+county_votes={}
+
 #Winning candidate and winning count tracker
 winning_candidate=""
 winning_count=0
 winning_percentage=0
+
+#2. Initialize empty string, county name wuth largest turnout
+county_largest_turnout=""
+county_largest_turnout_votes=0
+
 
 #Open the election results and read the file
 with open(file_to_load) as election_data:
@@ -56,11 +65,19 @@ with open(file_to_load) as election_data:
        
 #Print the candidate name from each row.
         candidate_name=row[2]
+        
+#3. Loop with county name from each row
+         county_name=row[1]
+    
 
 #if the candidate does not match any existing candidate...
         if candidate_name not in candidate_options: 
     #Add the candidate name to the candidate list
             candidate_options.append(candidate_name)
+    
+    #4A. write a decision statement with a logical operator to check if the county name acquired in Step 3 is in the county list (step1)
+        if county_name not in county_list
+    #4B. 
     
 #2. Begin tracking that candidate´s vote count
             candidate_votes[candidate_name] = 0
@@ -146,3 +163,4 @@ with open(file_to_save, "w") as txt_file:
    
 
 
+            
